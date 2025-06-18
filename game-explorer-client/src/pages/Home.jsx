@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { fetchPopularGames } from "../utils/api";
 import GameCard from "../components/GameCard";
+import { FavoritesContext } from "../contexts/FavoritesContext";
 
 function Home() {
   const [games, setGames] = useState([]);
-  const [favorites, setFavorites] = useState([]);
+  const { addFavorite } = useContext(FavoritesContext);
 
   useEffect(() => {
     fetchPopularGames().then(setGames);
   }, []);
-
-  function handleSave(game) {
-    const alreadySaved = favorites.some((g) => g.id === game.id);
-    if (!alreadySaved) {
-      setFavorites([...favorites, game]);
-    }
-  }
 
   return (
     <section>
@@ -25,7 +19,7 @@ function Home() {
       ) : (
         <div className="game-grid">
           {games.map((game) => (
-            <GameCard key={game.id} game={game} onSave={handleSave} />
+            <GameCard key={game.id} game={game} onSave={addFavorite} />
           ))}
         </div>
       )}
