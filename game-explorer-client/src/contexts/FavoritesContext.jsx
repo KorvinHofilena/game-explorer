@@ -11,8 +11,14 @@ export function FavoritesProvider({ children }) {
     }
   }
 
+  function removeFavorite(gameId) {
+    setFavorites(favorites.filter((g) => g.id !== gameId));
+  }
+
   return (
-    <FavoritesContext.Provider value={{ favorites, addFavorite }}>
+    <FavoritesContext.Provider
+      value={{ favorites, addFavorite, removeFavorite }}
+    >
       {children}
     </FavoritesContext.Provider>
   );
