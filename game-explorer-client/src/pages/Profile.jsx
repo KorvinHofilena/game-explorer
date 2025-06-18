@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { FavoritesContext } from "../contexts/FavoritesContext";
+import styles from "./Profile.module.css";
 
 function Profile() {
   const { favorites, removeFavorite } = useContext(FavoritesContext);
@@ -10,17 +11,19 @@ function Profile() {
       {favorites.length === 0 ? (
         <p>No favorites yet. Go save some!</p>
       ) : (
-        <ul>
+        <div className={styles["game-grid"]}>
           {favorites.map((game) => (
-            <li key={game.id}>
-              <strong>{game.name}</strong>
-              <br />
-              <img src={game.background_image} alt={game.name} width="250" />
-              <br />
+            <div key={game.id} className={styles.card}>
+              <h3 className={styles.title}>{game.name}</h3>
+              <img
+                src={game.background_image}
+                alt={game.name}
+                className={styles.image}
+              />
               <button onClick={() => removeFavorite(game.id)}>Remove</button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </section>
   );

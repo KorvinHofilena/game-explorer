@@ -7,16 +7,20 @@ import styles from "./Home.module.css";
 function Home() {
   const [games, setGames] = useState([]);
   const { addFavorite } = useContext(FavoritesContext);
+  const [loading, setLoading] = useState(true); // 🔹 NEW
 
   useEffect(() => {
-    fetchPopularGames().then(setGames);
+    fetchPopularGames().then((data) => {
+      setGames(data);
+      setLoading(false); // 🔹 NEW
+    });
   }, []);
 
   return (
     <section>
       <h1>Popular Games</h1>
-      {games.length === 0 ? (
-        <p>Loading games...</p>
+      {loading ? ( // 🔹 UPDATED condition
+        <div className={styles.spinner}></div>
       ) : (
         <div className={styles["game-grid"]}>
           {games.map((game) => (
