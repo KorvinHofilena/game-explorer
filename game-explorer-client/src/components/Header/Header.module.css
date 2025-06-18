@@ -1,0 +1,17 @@
+.header {
+  background-color: #161b22;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLink {
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  color: #58a6ff;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}

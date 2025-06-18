@@ -1,12 +1,12 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import styles from "./App.module.css";
+import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header />
       <main>
         <Routes>

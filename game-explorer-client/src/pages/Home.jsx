@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { fetchPopularGames } from "../utils/api";
-import GameCard from "../components/GameCard";
+import GameCard from "../components/GameCard/GameCard";
 import { FavoritesContext } from "../contexts/FavoritesContext";
+import styles from "./Home.module.css";
 
 function Home() {
   const [games, setGames] = useState([]);
@@ -17,7 +18,7 @@ function Home() {
       {games.length === 0 ? (
         <p>Loading games...</p>
       ) : (
-        <div className="game-grid">
+        <div className={styles["game-grid"]}>
           {games.map((game) => (
             <GameCard key={game.id} game={game} onSave={addFavorite} />
           ))}
