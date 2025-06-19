@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import NotFound from "./pages/NotFound";
 import styles from "./App.module.css";
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<h2>404 Page Not Found</h2>} />
         </Routes>
       </main>
     </div>

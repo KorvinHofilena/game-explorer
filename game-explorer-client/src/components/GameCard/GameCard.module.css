@@ -3,9 +3,12 @@
   border: 1px solid #30363d;
   border-radius: 8px;
   padding: 1rem;
-  margin: 1rem;
-  max-width: 300px;
   transition: transform 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .card:hover {
@@ -15,6 +18,8 @@
 
 .image {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 4px;
   margin-bottom: 0.5rem;
 }
@@ -23,4 +28,34 @@
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #c9d1d9;
+  text-align: center;
+}
+
+.button,
+.removeButton {
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button {
+  background-color: #3a5b7a;
+  color: white;
+}
+
+.button:hover {
+  background-color: #253747;
+}
+
+.removeButton {
+  background-color: #8f8f8f;
+  color: white;
+}
+
+.removeButton:hover {
+  background-color: #333030;
 }
