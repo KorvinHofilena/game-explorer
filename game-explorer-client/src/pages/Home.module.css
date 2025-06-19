@@ -1,3 +1,19 @@
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.gameGrid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Match Profile layout */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
 .spinner {
   width: 60px;
   height: 60px;
