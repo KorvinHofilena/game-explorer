@@ -2,7 +2,7 @@
   "name": "game-explorer-client",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://KorvinHofilena.github.io/game-explorer-client",
+  "homepage": "https://korvinhofilena.github.io/game-explorer-client",
   "type": "module",
   "scripts": {
     "dev": "vite",
