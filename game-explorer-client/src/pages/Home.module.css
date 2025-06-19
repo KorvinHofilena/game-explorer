@@ -2,12 +2,18 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+  text-align: center;
+}
+
+.centeredTitle {
+  text-align: center;
+  margin-top: 3rem;
 }
 
 .gameGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem; /* this is key for spacing between grid items */
+  gap: 2rem;
   margin-top: 2rem;
   align-items: start;
 }
