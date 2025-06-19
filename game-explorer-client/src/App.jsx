@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
 import styles from "./App.module.css";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="*" element={<h2>404 Page Not Found</h2>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
       </main>
