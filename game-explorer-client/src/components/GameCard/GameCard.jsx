@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./GameCard.module.css";
 
-function GameCard({ game, onSave, onRemove }) {
+function GameCard({ game, onSave, onRemove, isFavorite = false }) {
   return (
     <div className={styles.card}>
       <img
@@ -11,15 +11,16 @@ function GameCard({ game, onSave, onRemove }) {
       />
       <h3 className={styles.title}>{game.name}</h3>
 
-      {onSave && (
+      {isFavorite ? (
+        <button
+          className={styles.removeButton}
+          onClick={() => onRemove(game.id)}
+        >
+          Remove
+        </button>
+      ) : (
         <button className={styles.button} onClick={() => onSave(game)}>
           Save to Favorites
-        </button>
-      )}
-
-      {onRemove && (
-        <button className={styles.removeButton} onClick={onRemove}>
-          Remove
         </button>
       )}
     </div>
