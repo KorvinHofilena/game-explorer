@@ -1,9 +1,11 @@
+// src/contexts/FavoritesContext.jsx
 import React, { createContext, useState, useEffect } from "react";
 
 export const FavoritesContext = createContext();
 
-export const FavoritesProvider = ({ children }) => {
+export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     try {
@@ -19,12 +21,16 @@ export const FavoritesProvider = ({ children }) => {
       }
     } catch (err) {
       console.error("Failed to load favorites from localStorage:", err);
+    } finally {
+      setIsLoaded(true); // ✅ Allow children to render
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("favoriteGames", JSON.stringify(favorites));
-  }, [favorites]);
+    if (isLoaded) {
+      localStorage.setItem("favoriteGames", JSON.stringify(favorites));
+    }
+  }, [favorites, isLoaded]);
 
   const addFavorite = (game) => {
     if (!favorites.some((g) => g.id === game.id)) {
@@ -36,6 +42,9 @@ export const FavoritesProvider = ({ children }) => {
     setFavorites((prev) => prev.filter((g) => g.id !== gameId));
   };
 
+  // ✅ Delay rendering children until state is initialized
+  if (!isLoaded) return null;
+
   return (
     <FavoritesContext.Provider
       value={{ favorites, addFavorite, removeFavorite }}
@@ -43,4 +52,4 @@ export const FavoritesProvider = ({ children }) => {
       {children}
     </FavoritesContext.Provider>
   );
-};
+}

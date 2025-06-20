@@ -1,70 +1,38 @@
-# 🎮 Game Explorer
+# Game Explorer
 
-**Game Explorer** is a custom React application that showcases trending video games using the [RAWG Video Games API](https://rawg.io/apidocs). Users can browse popular games, save favorites to their profile, and enjoy a clean, responsive futuristic-themed interface.
+Game Explorer is a custom-built React application that allows users to browse trending video games using data from the RAWG Video Games API. The app includes features for viewing popular games, saving favorites, and navigating between pages, all within a modern, responsive interface.
 
-## 🚀 Features
+## Features
 
-- 🔥 Fetches trending games from RAWG API
-- 💾 Save and remove favorite games
-- 🌐 Multi-page routing with React Router
-- ⚙️ Styled with CSS Modules using BEM methodology
-- 📱 Fully responsive design (320px and up)
-- ⏳ Animated loading spinner and transition effects
-- ❌ 404 Not Found page for broken routes
-- 🌙 Futuristic dark theme and glowing UI
+- Fetches trending games from the RAWG API
+- Save and remove favorite games using localStorage and React Context
+- Client-side routing with React Router
+- Modular CSS styling using BEM methodology
+- Animated loading spinner and transitions for a smooth UX
+- 404 Not Found page for unmatched routes
+- Futuristic dark theme and responsive layout for all screen sizes
 
-## 🔧 Technologies Used
+## Technologies Used
 
-- **React + Vite**
-- **CSS Modules (BEM)**
-- **React Router**
-- **Framer Motion (for page transitions)**
-- **RAWG API (Third-party)**
+- React (with Vite)
+- React Router
+- CSS Modules (BEM)
+- Framer Motion
+- RAWG Video Games API
 
-## 🧪 Setup Instructions
+## Installation
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/korvinhofilena/game-explorer.git
+# Clone the repository
+git clone https://github.com/KorvinHofilena/game-explorer.git
 cd game-explorer
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Run the app in development mode
+# Start development server
 npm run dev
 
-# 4. Build the app for production
+# Build for production
 npm run build
-🌐 Deployment
-The app is deployed to GitHub Pages. You can view it live at:
-
-🔗 View Live Project
-
-⚠️ Make sure to replace the placeholder with your actual GitHub Pages link.
-
-📋 Requirements Fulfilled
-✅ Responsive layout using Grid/Flexbox
-
-✅ 2 working routes (/ and /profile)
-
-✅ Third-party API integration (RAWG)
-
-✅ Reusable components and consistent styling
-
-✅ API error handling and loading state
-
-✅ Semantic JSX/HTML structure
-
-✅ Clean code and descriptive naming
-
-✅ 404 fallback route
-
-✅ Deployed using GitHub Pages
-
-✅ Styled with CSS Modules + BEM
-
-🧠 Inspiration & Goals
-This app was built as part of the final project for a React development program for TripleTen. It focuses on integrating third-party APIs, creating a responsive interface, and writing clean modular code in a real-world team workflow environment.
-
 ```
