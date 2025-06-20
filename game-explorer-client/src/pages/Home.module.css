@@ -1,0 +1,79 @@
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.heading {
+  text-align: center;
+}
+
+.gameGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #30363d;
+  border-top: 6px solid #58a6ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+.error {
+  text-align: center;
+  color: #ff4d4f;
+  margin-top: 2rem;
+}
+
+.showMore {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #1d283a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-family: "Orbitron", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.showMore:hover {
+  background-color: #2a3c55;
+  transform: scale(1.05);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1200px) {
+  .gameGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .gameGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gameGrid {
+    grid-template-columns: 1fr;
+  }
+}
