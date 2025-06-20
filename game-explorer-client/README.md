@@ -35,4 +35,10 @@ npm run dev
 
 # Build for production
 npm run build
+
+Deployment
+The app is deployed using GitHub Pages and is available at:
+
+https://korvinhofilena.github.io/game-explorer
+
 ```
