@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { FavoritesContext } from "../contexts/FavoritesContext";
 import GameCard from "../components/GameCard/GameCard";
 import PageWrapper from "../components/PageWrapper/PageWrapper";
-import styles from "./Home.module.css"; // Use Home styles for layout
+import styles from "./Home.module.css";
 
 function Profile() {
   const { favorites, removeFavorite } = useContext(FavoritesContext);

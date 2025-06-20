@@ -1,7 +1,7 @@
 .wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2.5rem 2rem 2rem; /* Reduced top padding from 4rem to 2.5rem */
+  padding: 2.5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
